@@ -27,3 +27,10 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: node index.js
+
+    - name: Check if map.png exists
+      id: check_files
+      uses: andstor/file-existence-action@v1
+      with:
+        files: "map.png"
+        allow_failure: true
